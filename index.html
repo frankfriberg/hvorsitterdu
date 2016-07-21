@@ -27,7 +27,8 @@
       }
 
       #kart {
-        height: 70vh;
+        height: 85vh;
+        max-width: 100%;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -70,12 +71,21 @@
 
   <script>
     var draggable = document.getElementById('draggable');
-    draggable.addEventListener('touchmove', function(event) {
+
+    var initialDraggableLocation;
+    var initialTouch;
+
+    document.addEventListener('touchstart', function(event) {
+      initialTouch = event.targetTouches[0];
+      initialDraggableLocation = draggable.getBoundingClientRect();
+    });
+
+    document.addEventListener('touchmove', function(event) {
       var touch = event.targetTouches[0];
 
       // Place element where the finger is
-      draggable.style.left = touch.pageX-25 + 'px';
-      draggable.style.top = touch.pageY-25 + 'px';
+      draggable.style.left = initialDraggableLocation.left + (touch.pageX - initialTouch.pageX) + 'px';
+      draggable.style.top = initialDraggableLocation.top + (touch.pageY - initialTouch.pageY) + 'px';
       event.preventDefault();
     }, false);
   </script>
