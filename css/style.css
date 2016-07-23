@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#logo {
+  width: 60%;
+  margin: 15px auto;
+}
+
+#logo img {
+  width: 100%;
+}
+
+#kart {
+  height: 85vh;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#draggable {
+  width: 25%;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+#draggable img {
+  width: 100%;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1DACFC;
+  color: #FFF;
+  text-align: center;
+  padding: 10px 0 5px 0;
+}
