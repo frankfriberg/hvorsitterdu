@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
+  padding-bottom: 20px;
 }
 
 #logo {
@@ -13,7 +14,7 @@ body {
 }
 
 #kart {
-  height: 85vh;
+  height: 75vh;
   max-width: 100%;
   display: block;
   margin-left: auto;
