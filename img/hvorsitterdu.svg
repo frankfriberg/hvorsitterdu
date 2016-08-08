@@ -1,19 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 215.7 38" style="enable-background:new 0 0 215.7 38;" xml:space="preserve">
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
-	.st1{fill:#FFFFFF;}
-	.st2{font-family:'HelveticaNeue';}
-	.st3{font-size:20px;}
+	.st1{enable-background:new    ;}
+	.st2{fill:#FFFFFF;}
+	.st3{fill:url(#SVGID_2_);}
+	.st4{fill:#231F20;}
+	.st5{font-family:'HelveticaNeue';}
+	.st6{font-size:97.8424px;}
+	.st7{opacity:0.2;}
+	.st8{fill:#A8A9AD;}
+	.st9{opacity:0.3;fill:#231F20;enable-background:new    ;}
+	.st10{fill:#00AAFF;}
+	.st11{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
 </style>
-<title>hvorsitterdu</title>
-<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="107.83" y1="38" x2="107.83" y2="-3.771002e-03">
-	<stop  offset="0" style="stop-color:#00AAFF"/>
-	<stop  offset="1" style="stop-color:#00DCFF"/>
-</linearGradient>
-<path class="st0" d="M215.7,37.2c-7.6-3.4-9.7-18.9-9.7-18.9v-0.8c0.1-9.5-7.5-17.4-17.1-17.5c-0.2,0-0.4,0-0.6,0h-170
-	C8.4,0,0,7.6,0,17.5v1.7C0,29.1,8.4,38,18.4,38h170c4.3-0.1,8.4-1.8,11.5-4.7C201.3,34.2,205.4,37.2,215.7,37.2z"/>
-<text transform="matrix(1 0 0 1 34.93 26.46)" class="st1 st2 st3">Hvor sitter du?</text>
+<g id="Layer_1_1_">
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-122.65" y1="321.2" x2="-122.65" y2="359.2" gradientTransform="matrix(1 0 0 -1 0 359.2)">
+		<stop  offset="0" style="stop-color:#00AAFF"/>
+		<stop  offset="1" style="stop-color:#00DCFF"/>
+	</linearGradient>
+	<path class="st0" d="M-14.8,37.2c-7.6-3.4-9.7-18.9-9.7-18.9v-0.8C-24.4,8-32,0.1-41.6,0c-0.2,0-0.4,0-0.6,0h-170
+		c-9.9,0-18.3,7.6-18.3,17.5v1.7c0,9.9,8.4,18.8,18.4,18.8h170c4.3-0.1,8.4-1.8,11.5-4.7C-29.2,34.2-25.1,37.2-14.8,37.2z"/>
+	<text transform="matrix(1 0 0 1 -195.57 26.476)" class="st2 st5" style="font-size:20px;">Hvor sitter du?</text>
+</g>
+<g id="Layer_2">
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="250" y1="500" x2="250" y2="-9.094947e-13">
+		<stop  offset="0" style="stop-color:#00AAFF"/>
+		<stop  offset="1" style="stop-color:#00DCFF"/>
+	</linearGradient>
+	<rect class="st3" width="500" height="500"/>
+	<path class="st2" d="M433.9,361.2c-12.4-5.5-15.8-30.8-15.8-30.8V166c0.2-15.5-12.2-28.4-27.9-28.5c-0.3,0-0.7,0-1,0H112
+		c-16.1,0-29.8,12.4-29.8,28.5v165.8c0,16.1,13.7,30.7,30,30.7h277.2c7-0.2,13.7-2.9,18.8-7.7C410.4,356.3,417.1,361.2,433.9,361.2z
+		"/>
+	<text transform="matrix(1 0 0 1 117.8512 283.8543)" class="st4 st5 st6">Hvor?</text>
+</g>
+<g class="st7">
+	<polygon class="st4" points="664.4,209 658.4,206.4 625.5,298 626.2,298.2 670.3,211.5 	"/>
+	<g>
+		
+			<ellipse transform="matrix(0.3953 -0.9185 0.9185 0.3953 250.9777 729.2817)" class="st4" cx="679.4" cy="174" rx="38.7" ry="48.5"/>
+	</g>
+</g>
+<g>
+	<polygon class="st8" points="626.1,298.2 634.5,132.9 625.5,132.9 616.5,132.9 624.7,298.2 	"/>
+	<polygon class="st9" points="624.7,298.2 616.5,132.9 621.1,132.9 625.1,297.9 625.1,298.2 	"/>
+	<g>
+		<circle class="st10" cx="625.5" cy="109.6" r="67"/>
+		<path class="st11" d="M625.5,127.7c29.4,0,54.4-16.6,63.4-39.7c-9-26.4-34-45.4-63.4-45.4s-54.4,19-63.4,45.4
+			C571.1,111.1,596.1,127.7,625.5,127.7z"/>
+		<circle class="st11" cx="618.7" cy="69" r="15.8"/>
+	</g>
+</g>
 </svg>

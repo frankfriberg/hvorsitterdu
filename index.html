@@ -2,38 +2,45 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hvor sitter du a? Finner deg ikke?">
-    <link rel="apple-touch-icon" href="/custom_icon.png">
-    <title>Hvor sitter du?</title>
 
-    <link rel="stylesheet" href="css/style.css" media="screen" charset="utf-8">
+    <title>Hvor sitter du?</title>
+    <meta name="description" content="Hvor sitter du a? Finner deg ikke?">
+
+    <link rel="stylesheet" href="css/style.css" media="screen">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mlens-1.6.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- OGp -->
+    <meta property="og:title" content="Hvor sitter du?" />
+    <meta property="og:image" content="img/salen-big.png" />
+
+    <!-- iOS home screen -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <link rel="apple-touch-icon" href="img/touch-icon.png">
+    <link rel="apple-touch-startup-image" href="img/salen-big.png">
   </head>
 
   <body>
-    <div id="logo">
+    <header class="logo">
       <img src="img/hvorsitterdu.svg" />
-    </div>
-    <div id="draggable">
-      <img src="img/marker.png" />
-    </div>
-    <img id="kart" src="img/salen.jpg" />
-    <div id="footer">
-      Dra pilen, ta screenshot, del! 🎉
-    </div>
+    </header>
+    <main class="map-container">
+      <div class="pin"></div>
+      <img class="map" src="img/salen.png" data-big="img/salen-big.png" />
+    </main>
+    <footer class="intro">
+      Velg hvor, ta screenshot, del! 🎉
+    </footer>
   </body>
 
-  <script>
-    var draggable = document.getElementById('draggable');
-    draggable.addEventListener('touchmove', function(event) {
-      var touch = event.targetTouches[0];
-
-      // Place element where the finger is
-      draggable.style.left = touch.pageX-25 + 'px';
-      draggable.style.top = touch.pageY-25 + 'px';
-      event.preventDefault();
-    }, false);
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(document.body).css("height", window.innerHeight);
+   });
   </script>
 
   <script>
