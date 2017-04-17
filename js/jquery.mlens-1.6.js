@@ -309,9 +309,16 @@
 	            $target.css({"backgroundPosition": leftPos + "px " + topPos + "px"});
 
 				// calculating target lens position inside the image
+							var ua = navigator.userAgent.toLowerCase();
+							var isAndroid = ua.indexOf("android") > -1;
 	            leftPos = String(e.pageX - offset.left - $target.width() / 2);
 	            topPos = String(e.pageY - offset.top - $target.height() / 2);
-	            $target.css({"left": leftPos + "px", "top": topPos + "px"});
+
+							if(isAndroid) {
+								$target.css({"left": leftPos + "px", "top": topPos - 50 + "px"});
+							} else {
+		            $target.css({"left": leftPos + "px", "top": topPos - 20 + "px"});
+							}
 	        }
 
 			// saving new data in the mlens instance

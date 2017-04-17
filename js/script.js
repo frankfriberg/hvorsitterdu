@@ -30,19 +30,19 @@ $(document).ready(function() {
     responsive: true                        // true if mlens has to be responsive (boolean)
   });
 
-  // Check if iOS
-  if(window.navigator.userAgent.indexOf('iPhone') != -1 && !(window.navigator.standalone)){
-    $(document.body).load('standalone.html');
-  // If not iOS
-  } else {
-
-  }
-
-  // Check if added to HomeScreen
-  if(window.navigator.standalone){
-
-  // If not added to HomeScreen
-  } else {
-
-  }
+  // // Check if iOS
+  // if(window.navigator.userAgent.indexOf('iPhone') != -1 && !(window.navigator.standalone)){
+  //   $(document.body).load('standalone.html');
+  // // If not iOS
+  // } else {
+  //
+  // }
+  //
+  // // Check if added to HomeScreen
+  // if(window.navigator.standalone){
+  //
+  // // If not added to HomeScreen
+  // } else {
+  //
+  // }
 });
