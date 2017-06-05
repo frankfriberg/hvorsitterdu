@@ -1,0 +1,25 @@
+// _header.scss
+@import "properties";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    transition: .2s;
+
+    &:hover {
+      padding-bottom: 5px;
+      margin-top: -5px;
+    }
+  }
+}

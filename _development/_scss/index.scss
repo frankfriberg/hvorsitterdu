@@ -1,0 +1,77 @@
+// index.scss
+@import "properties";
+
+.promotion {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  margin-top: 3.5em;
+  margin-bottom: 5em;
+}
+
+.offers {
+
+  .offer {
+    background-color: $primary-color;
+    padding: 2em 2em 2.5em 2em;
+    color: #FFF;
+    position: relative;
+    margin-bottom: 3.4em;
+
+    .button {
+      position: absolute;
+      bottom: -1.6em;
+    }
+
+    h1 {
+      font-weight: bold;
+      font-size: 1.5em;
+      margin-bottom: .5em;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+
+    &__right {
+      margin-left: 10%;
+    }
+
+    &__left {
+      margin-right: 10%;
+      text-align: right;
+
+      .button {
+        right: 2em;
+      }
+    }
+  }
+}
+
+.contact {
+  input[type="email"], input[type="text"], input[type="submit"], textarea {
+    -webkit-appearance: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: inherit;
+    display: block;
+    width: 100%;
+    line-height: inherit;
+    cursor: pointer;
+  }
+
+  input[type="text"], input[type="email"], input[type="password"], textarea {
+    color: $primary-color;
+    border-bottom: 3px solid $secondary-color;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    resize: none;
+  }
+
+  input[type="submit"] {
+    margin-top: 1em;
+  }
+}

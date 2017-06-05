@@ -1,27 +1,24 @@
 {
-  "name": "hvorsitterdu",
+  "name": "skvid",
   "version": "1.0.0",
-  "description": "Hvor sitter du a?",
+  "description": "Skvid Studios homepage",
   "main": "index.html",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  },
   "devDependencies": {
+    "browser-sync": "^2.18.2",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-minify": "0.0.14"
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-util": "^3.0.7",
+    "susy": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/frankfriberg/hvorsitterdu.git"
-  },
   "author": "Frank Friberg",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/frankfriberg/hvorsitterdu/issues"
-  },
-  "homepage": "https://github.com/frankfriberg/hvorsitterdu#readme"
+  "license": "ISC"
 }

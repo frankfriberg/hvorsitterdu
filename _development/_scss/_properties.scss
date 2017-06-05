@@ -1,0 +1,30 @@
+// _properties.scss
+$primary-color: #6223AE;
+$secondary-color: #00FFEB;
+
+$success-color: green;
+$fail-color: red;
+$info-color: lightblue;
+
+$mobile-size: 320px;
+$tablet-size: 760px;
+$desktop-size: 992px;
+$wide-size: 1200px;
+
+$font-family: 'Montserrat', sans-serif;
+
+@mixin phone {
+  @media only screen and (min-width: $mobile-size) { @content; }
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $tablet-size) { @content; }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $desktop-size) { @content; }
+}
+
+@mixin wide {
+  @media only screen and (min-width: $wide-size) { @content; }
+}
