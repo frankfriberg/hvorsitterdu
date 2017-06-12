@@ -1,3 +1,5 @@
-# Ignore mac DS Store files
-**/.DS_Store
-/node_modules
+# OS junk files
+[Tt]humbs.db
+*.DS_Store
+node_modules/
+_production/temp/

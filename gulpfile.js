@@ -1,6 +1,6 @@
 // Gulp Dependencies
 const gulp    = require('gulp');
-const pug     = require('gulp-pug');
+const connect = require('gulp-connect-php');
 const bs      = require('browser-sync').create();
 const sass    = require('gulp-sass');
 const image   = require('gulp-imagemin');
@@ -13,7 +13,7 @@ const mq      = require('gulp-combine-mq');
 // Dev Source
 const src     = '_development/';
 const srcSASS = src + '_scss/';
-const srcPUG  = src + '_pug/';
+const srcPHP  = src + '_php/';
 const srcJS   = src + '_js/';
 const srcIMG  = src + '_images/';
 
@@ -38,11 +38,8 @@ gulp.src = function() {
 };
 
 // Run Tasks
-gulp.task('pug', function() {
-  return gulp.src([srcPUG + '*.pug', '!' + srcPUG + '_*.pug'])
-    .pipe(pug({
-      pretty: true
-    }))
+gulp.task('php', function() {
+  return gulp.src([srcPHP + '*.php', '!' + srcPHP + '_*.php'])
     .pipe(gulp.dest(dist))
     .pipe(bs.stream());
 });
@@ -51,7 +48,7 @@ gulp.task('sass', function() {
   return gulp.src(srcSASS + '*.scss')
     .pipe(sass())
     .pipe(prefix({
-      browsers: ['> 5%'],
+      browsers: ['> 5%']
     }))
     .pipe(mq({
       beautify: false
@@ -74,20 +71,25 @@ gulp.task('clean-images', function() {
 gulp.task('image', ['clean-images'], function() {
   gulp.src(srcIMG + '**/*')
     .pipe(image())
-    .pipe(gulp.dest(dirIMG))
-    .pipe(bs.stream());
+    .pipe(gulp.dest(dirIMG));
+    // .pipe(bs.stream());
 });
 
 gulp.task('serve', ['watch'], function() {
-  bs.init({
-    server: dist
-  });
+  connect.server({
+    open: true,
+    base: '_production'
+  }, function () {
+    bs.init({
+      server: dist
+    });
+  })
 });
 
-gulp.task('watch', ['pug', 'sass', 'js', 'image'], function() {
+gulp.task('watch', ['php', 'sass', 'js', 'image'], function() {
   gulp.watch(srcSASS + '*.scss', ['sass']);
   gulp.watch(srcJS + '*.js', ['js'])
-  gulp.watch(srcPUG + '*.pug', ['pug']);
+  gulp.watch(srcPHP + '*.php', ['php']);
   gulp.watch(srcIMG + '**/*', ['image']);
 });
 
