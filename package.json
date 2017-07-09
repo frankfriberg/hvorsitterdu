@@ -1,25 +1,27 @@
 {
-  "name": "skvid",
-  "version": "1.0.0",
-  "description": "Skvid Studios homepage",
-  "main": "index.html",
+  "name": "HvorSitterDu.no",
+  "version": "2.0.0",
+  "homepage": "www.hvorsitterdu.no",
+  "main": "index.php",
+  "repository": "https://github.com/frankfriberg/hvorsitterdu.git",
   "devDependencies": {
-    "browser-sync": "^2.18.2",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-clean": "^0.3.2",
-    "gulp-combine-mq": "^0.4.0",
-    "gulp-connect-php": "^1.0.1",
-    "gulp-imagemin": "^3.1.1",
-    "gulp-plumber": "^1.1.0",
-    "gulp-pug": "^3.1.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-util": "^3.0.7",
+    "browser-sync": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-clean": "*",
+    "gulp-combine-mq": "*",
+    "gulp-connect-php": "*",
+    "gulp-image": "^2.9.0",
+    "gulp-imagemin": "*",
+    "gulp-plumber": "*",
+    "gulp-pug": "*",
+    "gulp-sass": "*",
+    "gulp-util": "*",
     "susy": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Frank Friberg",
+  "author": "Skvid Studios",
   "license": "ISC"
 }

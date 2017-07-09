@@ -1,9 +1,9 @@
 // Gulp Dependencies
 const gulp    = require('gulp');
 const connect = require('gulp-connect-php');
-const bs      = require('browser-sync').create();
+const bs      = require('browser-sync');
 const sass    = require('gulp-sass');
-const image   = require('gulp-imagemin');
+const image   = require('gulp-image');
 const prefix  = require('gulp-autoprefixer');
 const clean   = require('gulp-clean');
 const plumber = require('gulp-plumber');
@@ -69,28 +69,35 @@ gulp.task('clean-images', function() {
 })
 
 gulp.task('image', ['clean-images'], function() {
-  gulp.src(srcIMG + '**/*')
+  gulp.src([srcIMG + '**/*.png', srcIMG + '**/*.jpg', srcIMG + '**/*.svg'])
     .pipe(image())
-    .pipe(gulp.dest(dirIMG));
-    // .pipe(bs.stream());
+    .pipe(gulp.dest(dirIMG))
+    .pipe(bs.stream());
 });
 
-gulp.task('serve', ['watch'], function() {
+gulp.task('phpserver', function() {
   connect.server({
+    base: '_production',
+    port: 8010,
+    stdio: 'ignore',
+    keepalive: true
+  });
+});
+
+gulp.task('serve', ['phpserver', 'watch'], function() {
+  bs ({
+    proxy: '127.0.0.1:8010',
+    port: 8080,
     open: true,
-    base: '_production'
-  }, function () {
-    bs.init({
-      server: dist
-    });
-  })
+    notify: false
+  });
 });
 
 gulp.task('watch', ['php', 'sass', 'js', 'image'], function() {
   gulp.watch(srcSASS + '*.scss', ['sass']);
   gulp.watch(srcJS + '*.js', ['js'])
   gulp.watch(srcPHP + '*.php', ['php']);
-  gulp.watch(srcIMG + '**/*', ['image']);
+  gulp.watch([srcIMG + '**/*.png', srcIMG + '**/*.jpg', srcIMG + '**/*.svg'], ['image']);
 });
 
 gulp.task('default', ['serve']);

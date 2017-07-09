@@ -1,21 +1,29 @@
 <?php
-// Stores the data from the hidden form
-$image = $_POST["image"];
-
 // Gets the time in milliseconds
 $timeparts = explode(" ",microtime());
 $currenttime = bcadd(($timeparts[0]*1000),bcmul($timeparts[1],1000));
 
 // Gathers the time with current date and puts it into the file name
-$filename = "temp/" . date("ymd" . $currenttime) . ".php";
+$path = "temp/";
+$htmlname = $currenttime . ".html";
+$imagename =  $currenttime . ".png";
 
-global $filename;
-$handle = fopen($filename, "w") or die("Cannot open file: ".$filename);
+// Saves the captured image
+$image = $_POST["image"];
+$ifp = fopen( $path . $imagename, 'wb' );
+$data = explode( ',', $image );
+fwrite( $ifp, base64_decode( $data[ 1 ] ) );
+fclose( $ifp );
+
+// Injects the template with data and saves it
+global $htmlname;
+$handle = fopen($path . $htmlname, "w");
 ob_start();
 include_once("template.php");
 $filecontent = ob_get_clean();
 fwrite($handle, $filecontent);
 fclose($handle);
 
-echo $filename;
+// Returns the name for URL
+echo $path . $imagename;
 ?>
