@@ -100,4 +100,6 @@ gulp.task('watch', ['php', 'sass', 'js', 'image'], function() {
   gulp.watch([srcIMG + '**/*.png', srcIMG + '**/*.jpg', srcIMG + '**/*.svg'], ['image']);
 });
 
+gulp.task('all', ['php', 'sass', 'js', 'image']);
+
 gulp.task('default', ['serve']);

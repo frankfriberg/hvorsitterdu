@@ -21,9 +21,9 @@ $(function() {
   touchzone.width(touchWidth);
 
   // Starts listener for touch down
-  touchzone.on('touchstart', function(e) {
+  touchzone.on('touchstart', function(event) {
     // Prevent touch drag and select on touch
-    e.preventDefault();
+    event.preventDefault();
 
     // Moves pin out of view and hides it on touch
     pin.css({
@@ -37,13 +37,13 @@ $(function() {
   });
 
   // Starts listener for touch move
-  touchzone.on('touchmove', function(e) {
+  touchzone.on('touchmove', function(event) {
     // Prevent touch drag and select on touch move
-    e.preventDefault();
+    event.preventDefault();
 
     // Gets position of touch point inside touch container
-    touchX = e.changedTouches[0].pageX - touchzone.offset().left;
-    touchY = e.changedTouches[0].pageY - touchzone.offset().top;
+    touchX = event.changedTouches[0].pageX - touchzone.offset().left;
+    touchY = event.changedTouches[0].pageY - touchzone.offset().top;
 
     // Calculates percentage for responsive positioning
     touchPercentageX = touchX / touchzone.width() * 100;
@@ -68,9 +68,9 @@ $(function() {
   });
 
   // Starts listener for touch end
-  touchzone.on('touchend', function(e) {
+  touchzone.on('touchend', function(event) {
     // Prevent touch drag and select on tounch end
-    e.preventDefault();
+    event.preventDefault();
 
     // Limits pin position to inside touch container
     if (touchY < 0) {
@@ -130,10 +130,10 @@ $(function() {
         dataType : "text"
       }).done(function(response) {
         // Puts the link into the correlating anchors
-        $('#telegramlink').attr('href', 'https://t.me/share/url?url=http://www.hvorsitterdu.no/beta/' + response);
-        $('#whatsapplink').attr('href', 'whatsapp://send?text=http://www.hvorsitterdu.no/beta/' + response);
-        $('#messagelink').attr('href', 'sms:&body=http://www.hvorsitterdu.no/beta/' + response);
-        $('#copylink').val('http://www.hvorsitterdu.no/beta/' + response);
+        $('#telegramlink').attr('href', 'https://t.me/share/url?url=http://www.hvorsitterdu.no/' + response);
+        $('#whatsapplink').attr('href', 'whatsapp://send?text=http://www.hvorsitterdu.no/' + response);
+        $('#messagelink').attr('href', 'sms:&body=http://www.hvorsitterdu.no/' + response);
+        // $('#copylink').val('http://www.hvorsitterdu.no/beta/' + response);
         $('.link').addClass('active');
       });
     }

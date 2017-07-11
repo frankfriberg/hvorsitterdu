@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Hvorsitterdu.no</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../images/touch-icon.png" type="image/x-icon" />
     <meta name="description" content="Sponset av Skvid Studios!">
 
     <!-- JavaScript import -->
@@ -16,11 +15,7 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- OGp -->
-    <meta property="og:description" content="Sponset av Skvid Studios!">
-    <meta property="og:image" content="<?php echo $image; ?>">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="400">
-    <meta property="og:image:height" content="300">
+    <meta property="og:description" content="Hvor sitter du?">
     <meta property="og:title" content="Jeg sitter her!">
     <meta property="og:url" content="http://hvorsitterdu.no">
 
@@ -48,35 +43,15 @@
   	<link rel="apple-touch-icon" sizes="152x152" href="/images/faviconsfavicon-152.png">
   	<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/favicon-180.png">
 
-    <script type="text/javascript">
-      // // Creates a temporary element to copy text from
-      // function copyToClipboard() {
-      //   var $temp = $("<input>");
-      //   $("body").append($temp);
-      //   if (navigator.userAgent.match(/ipad|ipod|iphone/i)) {
-      //     var el = $input.get(0);
-      //     var editable = el.contentEditable;
-      //     var readOnly = el.readOnly;
-      //     el.contentEditable = true;
-      //     el.readOnly = false;
-      //     var range = document.createRange();
-      //     range.selectNodeContents(el);
-      //     var sel = window.getSelection();
-      //     sel.removeAllRanges();
-      //     sel.addRange(range);
-      //     el.setSelectionRange(0, 999999);
-      //     el.contentEditable = editable;
-      //     el.readOnly = readOnly;
-      //   } else {
-      //     $temp.val($('#copylink').val()).select();
-      //   }
-      //   document.execCommand("copy");
-      //   $temp.remove();
-      //   $('#notice').addClass('active');
-      //   setTimeout(function() {
-      //     $('#notice').removeClass('active');
-      //   }, 1500);
-      // }
+    <!-- Google Analytics tracking -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-53485532-3', 'auto');
+      ga('send', 'pageview');
     </script>
   </head>
 
@@ -100,10 +75,6 @@
         <input id="imagevalue" type="hidden" name="image" value="">
         <input class="sharebutton" onclick="ga('send', 'event', 'Sharing', 'click')" type="submit" value="">
       </form>
-
-      <div class="notice" id="notice">
-        LINK COPIED!
-      </div>
 
       <a class="link telegram" id="telegramlink" onclick="ga('send', 'event', 'Telegram', 'click')" href=""><img src="images/telegram.png" alt="Telegram link. BILDE."></a>
       <a class="link whatsapp" id="whatsapplink" onclick="ga('send', 'event', 'WhatsApp', 'click')" data-action="share/whatsapp/share" href=""><img src="images/whatsapp.png" alt="WhatsApp link. BILDE."></a>
