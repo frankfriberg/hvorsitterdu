@@ -43,6 +43,11 @@
   	<link rel="apple-touch-icon" sizes="152x152" href="/images/faviconsfavicon-152.png">
   	<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/favicon-180.png">
 
+    <!-- Makes sure there is no cache saved -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <!-- Google Analytics tracking -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
