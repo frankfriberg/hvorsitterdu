@@ -43,6 +43,11 @@
   	<link rel="apple-touch-icon" sizes="152x152" href="/images/faviconsfavicon-152.png">
   	<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/favicon-180.png">
 
+    <!-- Makes sure there is no cache saved -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
     <!-- Google Analytics tracking -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -73,12 +78,19 @@
 
       <form id="shareform" action="createpage.php" method="POST">
         <input id="imagevalue" type="hidden" name="image" value="">
+        <input id="time" type="hidden" name="currenttime" value="">
         <input class="sharebutton" onclick="ga('send', 'event', 'Sharing', 'click')" type="submit" value="">
       </form>
 
-      <a class="link telegram" id="telegramlink" onclick="ga('send', 'event', 'Telegram', 'click')" href=""><img src="images/telegram.png" alt="Telegram link. BILDE."></a>
-      <a class="link whatsapp" id="whatsapplink" onclick="ga('send', 'event', 'WhatsApp', 'click')" data-action="share/whatsapp/share" href=""><img src="images/whatsapp.png" alt="WhatsApp link. BILDE."></a>
-      <a class="link message" id="messagelink" onclick="ga('send', 'event', 'SMS', 'click')" href=""><img src="images/sms.png" alt="SMS link. BILDE."></a>
+      <a class="link telegram" id="telegramlink" onclick="ga('send', 'event', 'Telegram', 'click')" href="https://t.me/share/url?url=http://www.hvorsitterdu.no/">
+        <img src="images/telegram.png" alt="Telegram link. BILDE.">
+      </a>
+      <a class="link whatsapp" id="whatsapplink" onclick="ga('send', 'event', 'WhatsApp', 'click')" data-action="share/whatsapp/share" href="whatsapp://send?text=http://www.hvorsitterdu.no/">
+        <img src="images/whatsapp.png" alt="WhatsApp link. BILDE.">
+      </a>
+      <a class="link message" id="messagelink" onclick="ga('send', 'event', 'SMS', 'click')" href="sms:&body=http://www.hvorsitterdu.no/">
+        <img src="images/sms.png" alt="SMS link. BILDE.">
+      </a>
       <!-- <a class="link copy" id="copylink" onclick="copyToClipboard();" href="#" value=""><img src="images/url.png" alt="URL link. BILDE."></a> -->
     </div>
   </body>

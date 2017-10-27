@@ -12,6 +12,7 @@ $(function() {
   var touchPercentageY;
   var mapX;
   var mapY;
+  var currentTime;
 
   // Sets the height of the map image
   const touchHeight = $(window).height() - 20;
@@ -94,6 +95,10 @@ $(function() {
 
     // Shows the share button and logo again
     $('.sharebutton, .logo').addClass('active');
+
+    // Adds the currenttime to the #time input field
+    currentTime = new Date().getTime();
+    $('#time').val(currentTime);
   });
 
   // Creates the ad and positions it relative to where the pin is
@@ -110,7 +115,7 @@ $(function() {
       scale: 2,
       onrendered: function(canvas) {
         var png = canvas.toDataURL();
-        $('input[name="image"]').val(png);
+        $('#imagevalue').val(png);
       }
     });
     // ad();
@@ -128,21 +133,23 @@ $(function() {
         url : 'createpage.php',
         data : formData,
         dataType : "text"
-      }).done(function(response) {
-        // Puts the link into the correlating anchors
-        $('#telegramlink').attr('href', 'https://t.me/share/url?url=http://www.hvorsitterdu.no/' + response);
-        $('#whatsapplink').attr('href', 'whatsapp://send?text=http://www.hvorsitterdu.no/' + response);
-        $('#messagelink').attr('href', 'sms:&body=http://www.hvorsitterdu.no/' + response);
-        // $('#copylink').val('http://www.hvorsitterdu.no/beta/' + response);
-        $('.link').addClass('active');
       });
     }
+  }
+
+  function createlinks() {
+    $('#telegramlink').attr('href', 'https://t.me/share/url?url=http://www.hvorsitterdu.no/temp' + currentTime + '.png');
+    $('#whatsapplink').attr('href', 'whatsapp://send?text=http://www.hvorsitterdu.no/temp' + currentTime + '.png');
+    $('#messagelink').attr('href', 'sms:&body=http://www.hvorsitterdu.no/temp' + currentTime + '.png');
+    // $('#copylink').val('http://www.hvorsitterdu.no/beta/' + currentTime + '.png');
+    $('.link').addClass('active');
   }
 
   // Hijacks the submit function so it doesn't execute default action
   $('form').submit(function(event) {
     capture();
     send();
+    createlinks();
     event.preventDefault();
   });
 });
