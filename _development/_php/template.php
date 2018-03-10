@@ -14,7 +14,7 @@
     <!-- OGp -->
     <meta property="og:title" content="Jeg sitter her!">
     <meta property="og:site_name" content="HvorSitterDu">
-    <meta property="og:url" content="http://hvorsitterdu.no/temp/ <?php echo $htmlname; ?>">
+    <meta property="og:url" content="http://www.hvorsitterdu.no/temp/ <?php echo $htmlname; ?>">
     <meta property="og:description" content="Send hvor du sitter til dine venner uten styr!">
     <meta property="og:type" content="article">
     <meta property="og:image" content="<?php echo $imagename; ?>">

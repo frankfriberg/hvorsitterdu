@@ -39,7 +39,7 @@ gulp.src = function() {
 
 // Run Tasks
 gulp.task('php', function() {
-  return gulp.src([srcPHP + '*.php', '!' + srcPHP + '_*.php'])
+  return gulp.src([srcPHP + '*.php', '!' + srcPHP + '_*.php', srcPHP + '**/*.html'])
     .pipe(gulp.dest(dist))
     .pipe(bs.stream());
 });

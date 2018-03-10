@@ -6,6 +6,8 @@ $(function() {
   const dot = $('#dot');
 
   // Global variables
+  var touchHeight;
+  var touchWidth;
   var touchX;
   var touchY;
   var touchPercentageX;
@@ -14,11 +16,18 @@ $(function() {
   var mapY;
   var currentTime;
 
-  // Sets the height of the map image
-  const touchHeight = $(window).height() - 20;
-  const touchWidth = (touchHeight / 9) * 5;
+  // Finds the height and width for the map image
+  if (($(window).height() - 20) / 9 > ($(window).width() / 5)) {
+    touchWidth = $(window).width();
+    touchHeight = (touchWidth / 5) * 9;
+  } else {
+    touchHeight = $(window).height() - 20;
+    touchWidth = (touchHeight / 9) * 5;
+  }
 
+  // Sets the height of map image and width of touchzone so its correlating
   seatings.height(touchHeight);
+  // seatings.width(touchWidth);
   touchzone.width(touchWidth);
 
   // Starts listener for touch down
@@ -50,7 +59,7 @@ $(function() {
     touchPercentageX = touchX / touchzone.width() * 100;
     touchPercentageY = touchY / touchzone.height() * 100;
 
-    // Calculates the loupe background position to be correlationg
+    // Calculates the loupe background position to be correlating
     // to the position of the touch point
     mapX = Math.round(touchX / touchzone.width() * 500 /* map src width */ - loupe.width() / 2) *-1;
 		mapY = Math.round(touchY / touchzone.height() * 900 /* map src height */ - loupe.height() / 2) *-1;
@@ -138,10 +147,10 @@ $(function() {
   }
 
   function createlinks() {
-    $('#telegramlink').attr('href', 'https://t.me/share/url?url=http://www.hvorsitterdu.no/temp' + currentTime + '.png');
-    $('#whatsapplink').attr('href', 'whatsapp://send?text=http://www.hvorsitterdu.no/temp' + currentTime + '.png');
-    $('#messagelink').attr('href', 'sms:&body=http://www.hvorsitterdu.no/temp' + currentTime + '.png');
-    // $('#copylink').val('http://www.hvorsitterdu.no/beta/' + currentTime + '.png');
+    $('#telegramlink').attr('href', 'https://t.me/share/url?url=http://www.hvorsitterdu.no/temp/' + currentTime + '.png');
+    $('#whatsapplink').attr('href', 'whatsapp://send?text=http://www.hvorsitterdu.no/temp/' + currentTime + '.png');
+    $('#messagelink').attr('href', 'sms:&body=http://www.hvorsitterdu.no/temp/' + currentTime + '.png');
+    // $('#messengerlink').attr('href', 'fb-messenger://share/?link=' + currentTime + '.png&app_id=613528195657240')
     $('.link').addClass('active');
   }
 

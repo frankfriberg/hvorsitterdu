@@ -44,13 +44,13 @@ fclose( $ifp );
 // resize_image( $path . $imagename, 200, 200 );
 
 // Injects the template with data and saves it
-// global $htmlname;
-// $handle = fopen($path . $htmlname, "w");
-// ob_start();
-// include_once("template.php");
-// $filecontent = ob_get_clean();
-// fwrite($handle, $filecontent);
-// fclose($handle);
+global $htmlname;
+$handle = fopen($path . $htmlname, "w");
+ob_start();
+include_once("template.php");
+$filecontent = ob_get_clean();
+fwrite($handle, $filecontent);
+fclose($handle);
 
 // Returns the name for URL
 echo $path . $imagename;
