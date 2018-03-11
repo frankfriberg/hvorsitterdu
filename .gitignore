@@ -2,4 +2,4 @@
 [Tt]humbs.db
 *.DS_Store
 node_modules/
-_production/temp/
+_production/
