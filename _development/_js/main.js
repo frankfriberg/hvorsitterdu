@@ -42,6 +42,11 @@ $(function() {
     // Prevent touch drag and select on touch
     event.preventDefault();
 
+    // Checks for cookie and deletes tips if exists
+    if (getCookie('tutorial')) {
+      $('.tips').remove();
+    }
+
     // Moves pin out of view and hides it on touch
     pin.css({
       'top': -300,
@@ -191,10 +196,8 @@ $(function() {
   $('form').submit(function(event) {
     capture();
     send();
-    createlinks();
-    if (!getCookie('tutorial')) {
+    createlinks();if (!getCookie('tutorial')) {
       createCookie('tutorial', 'true', 60);
-      $('.tips').remove();
     }
     event.preventDefault();
   });

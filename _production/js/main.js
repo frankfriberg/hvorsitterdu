@@ -32,7 +32,6 @@ $(function() {
   // Checks for cookie and sees if tutorial has been shown before
   if (!getCookie('tutorial')) {
     $('#tipone').toggleClass('active');
-    createCookie('tutorial', 'true', 60);
   } else {
     console.log(getCookie('tutorial'));
     $('.tips').remove();
@@ -42,6 +41,11 @@ $(function() {
   touchzone.on('touchstart', function(event) {
     // Prevent touch drag and select on touch
     event.preventDefault();
+
+    // Checks for cookie and deletes tips if exists
+    if (getCookie('tutorial')) {
+      $('.tips').remove();
+    }
 
     // Moves pin out of view and hides it on touch
     pin.css({
@@ -192,7 +196,9 @@ $(function() {
   $('form').submit(function(event) {
     capture();
     send();
-    createlinks();
+    createlinks();if (!getCookie('tutorial')) {
+      createCookie('tutorial', 'true', 60);
+    }
     event.preventDefault();
   });
 });
