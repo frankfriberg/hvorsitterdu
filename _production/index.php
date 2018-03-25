@@ -53,15 +53,17 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <!-- Google Analytics tracking -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-53485532-3"></script>
+    <!-- Google Analytics -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      gtag('config', 'UA-53485532-3');
+      ga('create', 'UA-XXXXX-Y', 'auto');
+      ga('send', 'pageview');
     </script>
+    <!-- End Google Analytics -->
   </head>
 
   <body>
@@ -93,13 +95,13 @@
       </div>
 
       <div class="links">
-        <a class="link telegram" id="telegramlink" onclick="ga('send', 'event', 'ShareLink', 'Telegram')" href="https://t.me/share/url?url=http://www.hvorsitterdu.no/">
+        <a class="link telegram" id="telegramlink" onclick="ga('send', 'event', 'ShareLink', 'Telegram');" href="https://t.me/share/url?url=http://www.hvorsitterdu.no/">
           <img src="images/telegram.png" alt="Telegram link. BILDE.">
         </a>
-        <a class="link whatsapp" id="whatsapplink" onclick="ga('send', 'event', 'ShareLink', 'WhatsApp')" data-action="share/whatsapp/share" href="whatsapp://send?text=http://www.hvorsitterdu.no/">
+        <a class="link whatsapp" id="whatsapplink" onclick="ga('send', 'event', 'ShareLink', 'WhatsApp');" data-action="share/whatsapp/share" href="whatsapp://send?text=http://www.hvorsitterdu.no/">
           <img src="images/whatsapp.png" alt="WhatsApp link. BILDE.">
         </a>
-        <a class="link message" id="messagelink" onclick="ga('send', 'event', 'ShareLink', 'SMS')" href="sms:&body=http://www.hvorsitterdu.no/">
+        <a class="link message" id="messagelink" onclick="ga('send', 'event', 'ShareLink', 'SMS');" href="sms:&body=http://www.hvorsitterdu.no/">
           <img src="images/sms.png" alt="SMS link. BILDE.">
         </a>
         <!-- <a class="link messenger" id="messengerlink" onclick="ga('send', 'event', 'ShareLink', 'Messenger')" href=”fb-messenger://share/?link=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fsharing%2Freference%2Fsend-dialog&app_id=613528195657240”>
