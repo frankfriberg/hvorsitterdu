@@ -1,27 +1,25 @@
 {
-  "name": "HvorSitterDu.no",
-  "version": "2.0.0",
-  "homepage": "www.hvorsitterdu.no",
+  "name": "Hvorsitterdu",
+  "version": "1.0.0",
+  "description": "Hvorsitterdu.no",
   "main": "index.php",
-  "repository": "https://github.com/frankfriberg/hvorsitterdu.git",
   "devDependencies": {
-    "browser-sync": "*",
-    "gulp": "*",
-    "gulp-autoprefixer": "*",
-    "gulp-clean": "*",
-    "gulp-combine-mq": "*",
-    "gulp-connect-php": "*",
-    "gulp-image": "^2.9.0",
-    "gulp-imagemin": "*",
-    "gulp-plumber": "*",
-    "gulp-pug": "*",
-    "gulp-sass": "*",
-    "gulp-util": "*",
-    "susy": "*"
+    "browser-sync": "^2.23.6",
+    "bs-html-injector": "^3.0.3",
+    "file-exists": "^5.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-connect-php": "^1.0.3",
+    "gulp-html": "^0.4.7",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-sass": "^2.3.2",
+    "vinyl-ftp": "^0.6.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Skvid Studios",
+  "author": "Frank Friberg",
   "license": "ISC"
 }

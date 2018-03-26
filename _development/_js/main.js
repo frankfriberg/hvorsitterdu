@@ -32,9 +32,6 @@ $(function() {
   // Checks for cookie and sees if tutorial has been shown before
   if (!getCookie('tutorial')) {
     $('#tipone').toggleClass('active');
-  } else {
-    console.log(getCookie('tutorial'));
-    $('.tips').remove();
   }
 
   // Starts listener for touch down
@@ -196,7 +193,8 @@ $(function() {
   $('form').submit(function(event) {
     capture();
     send();
-    createlinks();if (!getCookie('tutorial')) {
+    createlinks();
+    if (!getCookie('tutorial')) {
       createCookie('tutorial', 'true', 60);
     }
     event.preventDefault();

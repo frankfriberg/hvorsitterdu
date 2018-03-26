@@ -88,11 +88,13 @@
         <input class="sharebutton" onclick="ga('send', 'event', 'Sharing', 'click')" type="submit" value="">
       </form>
 
-      <div class="tips">
-        <span class="tip" id="tipone">VELG HVOR DU SITTER 👆</span>
-        <span class="tip" id="tiptwo">KLIKK HER FOR Å DELE 👉</span>
-        <span class="tip" id="tipthree">VELG SÅ HVOR DU VIL SENDE 👌</span>
-      </div>
+      <?php if (!isset($_COOKIE["tutorial"])) { ?>
+        <div class="tips">
+          <span class="tip" id="tipone">VELG HVOR DU SITTER 👆</span>
+          <span class="tip" id="tiptwo">KLIKK HER FOR Å DELE 👉</span>
+          <span class="tip" id="tipthree">VELG SÅ HVOR DU VIL SENDE 👌</span>
+        </div>
+      <?php } ?>
 
       <div class="links">
         <a class="link telegram" id="telegramlink" onclick="ga('send', 'event', 'ShareLink', 'Telegram');" href="https://t.me/share/url?url=http://www.hvorsitterdu.no/">
