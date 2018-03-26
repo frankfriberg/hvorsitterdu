@@ -27,13 +27,22 @@ $(function() {
 
   // Sets the height of map image and width of touchzone so its correlating
   seatings.height(touchHeight);
-  // seatings.width(touchWidth);
   touchzone.width(touchWidth);
+
+  // Checks for cookie and sees if tutorial has been shown before
+  if (!getCookie('tutorial')) {
+    $('#tipone').toggleClass('active');
+  }
 
   // Starts listener for touch down
   touchzone.on('touchstart', function(event) {
     // Prevent touch drag and select on touch
     event.preventDefault();
+
+    // Checks for cookie and deletes tips if exists
+    if (getCookie('tutorial')) {
+      $('.tips').remove();
+    }
 
     // Moves pin out of view and hides it on touch
     pin.css({
@@ -104,6 +113,7 @@ $(function() {
 
     // Shows the share button and logo again
     $('.sharebutton, .logo').addClass('active');
+    $('#tipone, #tiptwo').toggleClass('active');
 
     // Adds the currenttime to the #time input field
     currentTime = new Date().getTime();
@@ -122,6 +132,7 @@ $(function() {
     // ad();
     html2canvas(touchzone, {
       scale: 2,
+      windowWidth: '700px',
       onrendered: function(canvas) {
         var png = canvas.toDataURL();
         $('#imagevalue').val(png);
@@ -129,6 +140,7 @@ $(function() {
     });
     // ad();
     $('.sharebutton').removeClass('active');
+    $('#tiptwo, #tipthree').toggleClass('active');
   }
 
   // Sends the form to createpage.php in realtime
@@ -150,8 +162,31 @@ $(function() {
     $('#telegramlink').attr('href', 'https://t.me/share/url?url=http://www.hvorsitterdu.no/temp/' + currentTime + '.png');
     $('#whatsapplink').attr('href', 'whatsapp://send?text=http://www.hvorsitterdu.no/temp/' + currentTime + '.png');
     $('#messagelink').attr('href', 'sms:&body=http://www.hvorsitterdu.no/temp/' + currentTime + '.png');
-    // $('#messengerlink').attr('href', 'fb-messenger://share/?link=' + currentTime + '.png&app_id=613528195657240')
+    // $('#messengerlink').attr('href', 'fb-messenger://share?link=' + encodeURIComponent('http://www.hvorsitterdu.no/temp/') + currentTime + '.png&app_id=' + encodeURIComponent(613528195657240));
     $('.link').addClass('active');
+  }
+
+  function createCookie(cname, cvalue, exdays) {
+    var date = new Date();
+    date.setTime(date.getTime() + (exdays*24*60*60*1000));
+    var expires = 'expires' + date.toUTCString();
+    document.cookie = cname + '=' + cvalue + ';' + expires;
+  }
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
   }
 
   // Hijacks the submit function so it doesn't execute default action
@@ -159,6 +194,9 @@ $(function() {
     capture();
     send();
     createlinks();
+    if (!getCookie('tutorial')) {
+      createCookie('tutorial', 'true', 60);
+    }
     event.preventDefault();
   });
 });
